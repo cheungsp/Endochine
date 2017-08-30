@@ -13,24 +13,6 @@ class ItemsIndex extends Component {
         <div className="items-selector">
           {items.map(itemData => <ItemPreview key={itemData.id} {...itemData} />)}
         </div>
-
-        {/* <Link to={`/cart/${3}`}>
-        <div className="itemIcon">
-          <div className="content">
-            1
-          </div>
-        </div>
-      </Link>
-        <div className="itemIcon">
-          <div className="content">
-            2
-          </div>
-        </div>
-        <div className="itemIcon">
-          <div className="content">
-            3
-          </div>
-        </div> */}
       </div>
     )
   }

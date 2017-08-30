@@ -14,8 +14,10 @@
 //       //   <Header />
 //       //   <Footer />
 //       // </div>
+//
 //       <BrowserRouter>
 //       <div>
+//         <Header />
 //         <Switch>
 //           <Route path="/cart" component={Cart} />
 //           <Route path="/items/:id" component={ItemsShow} />

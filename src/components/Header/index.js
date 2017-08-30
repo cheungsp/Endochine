@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './style.css';
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-
-  render() {
-    return (
-      <header className="header">
-        <h1>Header</h1>
-        <nav></nav>
-      </header>
-    );
-  }
+function Header () {
+  return (
+    <ul className="nav">
+      <li>
+        <NavLink activeClassName='active' to='/'>
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink activeClassName='active' to='/cart'>
+          Cart
+        </NavLink>
+      </li>
+    </ul>
+  )
 }
 
 export default Header;

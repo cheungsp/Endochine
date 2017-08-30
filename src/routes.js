@@ -1,18 +1,23 @@
 import React from 'react';
-import { Router, Route } from 'react-router';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import './style/style.css';
 
-import App from './components/App';
-// import About from './components/About';
-// import NotFound from './components/NotFound';
+import reducers from './reducers';
+import Cart from './components/Cart/index';
+import ItemsShow from './components/Items_show/index';
+import ItemsIndex from './components/Items_index/index';
 
-export default (
-  <Route path="/" component={App}>
-    {/* <IndexRoute component={Main} /> */}
-    {/* <Route path="item/:id" component={ItemPage} /> */}
-    {/* <Route path="profile" component={Profile} /> */}
-    {/* <Route path="login" component={Login} /> */}
-    {/* <Route path="trades" component={Trades} /> */}
-    {/* <Route path="myItems" component={MyItems} /> */}
-    {/* <Route path="*" component={ErrorPage} /> */}
-  </Route>
+const routes = (
+  <BrowserRouter>
+    <div>
+      <Switch>
+        <Route path="/cart" component={Cart} />
+        <Route path="/items/:id" component={ItemsShow} />
+        <Route path="/" component={ItemsIndex} />
+      </Switch>
+    </div>
+  </BrowserRouter>
 );
+
+export default routes

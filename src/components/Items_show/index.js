@@ -6,15 +6,14 @@ import './style.css';
 class ItemsShow extends Component {
 
   render() {
-    // const id = this.props.params.id;
-    // const id = this.props.id;
-    // const item = items.filter((item) => item.id === id)[0];
+    const id = this.props.match.params.id;
+    const item = items.filter((item) => item.id === id)[0];
     return (
       <div>
-
         this is a testttt
         <h3>
-          <h1>{props.match.params.name}</h1>
+          id goes here:
+          {id}
         </h3>
         <div className="navigateBack">
           <Link to="/">« Back to the index</Link>
