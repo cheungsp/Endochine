@@ -12,8 +12,10 @@ import './style.css';
 class App extends Component {
   render() {
     return (
+      <div className="wrapper">
       <Router>
         <div>
+          <Header />
           <Switch>
             <Route path="/cart" component={Cart} />
             <Route path="/items/:id" component={ItemsShow} />
@@ -21,6 +23,7 @@ class App extends Component {
           </Switch>
         </div>
       </Router>
+    </div>
     );
   }
 }

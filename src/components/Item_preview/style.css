@@ -1,0 +1,17 @@
+.item-pic {
+  width: 375px;
+  /*width: 50%;*/
+  height: 250px;
+}
+.item-preview {
+  text-align: center;
+  width: 49%;
+}
+
+.name {
+  font-size: 20px;
+}
+
+.price {
+  font-size: 20px;
+}

@@ -8,7 +8,7 @@ class ItemsIndex extends Component {
 
   render() {
     return (
-      <div id="parent">
+      <div className="parent">
 
         <div className="items-selector">
           {items.map(itemData => <ItemPreview key={itemData.id} {...itemData} />)}

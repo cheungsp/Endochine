@@ -1,0 +1,25 @@
+/*.parent{
+  padding-bottom: 4%;
+  height: 250px;
+  flex: 0 1 48%;
+  align-items: stretch;
+  &:nth-child(2n);
+    padding-left: 4%;
+    padding-right: 0;
+}
+.items-selector{
+  height: 100%;
+  background: #eee;
+  cursor: p;
+}*/
+
+.parent{
+}
+
+.items-selector{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /*flex-direction: row;*/
+ /*width: 100px; */
+}
