@@ -8,9 +8,10 @@ class ItemsIndex extends Component {
 
   render() {
     return (
-      <div className="parent">
-
-        <div className="items-selector">
+      <div className={['parent', 'container-fluid'].join(' ')}>
+        <div className={['items-selector', 'row-fluid'].join(' ')}>
+      {/* <div className="parent container-fluid"> */}
+        {/* <div className="items-selector row-fluid"> */}
           {items.map(itemData => <ItemPreview key={itemData.id} {...itemData} />)}
         </div>
       </div>
