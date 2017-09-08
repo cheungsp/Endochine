@@ -19,3 +19,52 @@
 .header {
   margin-bottom: 50px;
 }
+
+.buttons-group {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.delivery-button {
+  width: 40%;
+  margin-right: 10px;
+  height: 65px;
+}
+
+.pickup-button {
+  width: 40%;
+  margin-left: 10px;
+  height: 65px;
+}
+
+
+.pickup-dropdown {
+  text-align: center;
+  margin-right: 130px;
+}
+
+.date-dropdown {
+  width: 100%;
+  /*margin-right: 10px;*/
+  margin-right: 49px;
+}
+
+.time-dropdown {
+  width: 230%;
+  /*margin-left: 10px;*/
+}
+
+.dropdown {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.footer-buttons {
+  text-align: center;
+}
+
+.update-button {
+  border-radius: 22.5px;
+  margin-bottom: 8px;
+}
