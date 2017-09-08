@@ -1,56 +1,53 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './style.css';
+import { Nav, NavItem } from 'react-bootstrap';
+
+import Modal from '../Modal/index';
+
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { isOpen: false };
+  };
+
+  toggleModal = () => {
+    console.log('modaleee')
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  };
+
+  // const NavJustified = React.createClass({
+  // handleSelect(selectedKey) {
+  //   alert('selected ' + selectedKey);
+  // }
+  testfunction(){
+    console.log('jello')
+  }
+
   render() {
   return (
-    <ul className="nav">
-      <li>
-        <NavLink activeClassName='active' to='/'>
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink activeClassName='active' to='/cart'>
-          Cart
-        </NavLink>
-      </li>
-    </ul>
+    // <div className="navbar-header">
+    // <div className="header">
+    //   <Nav bsStyle="tabs" justified activeKey={1} onSelect={this.toggleModal}>
+    //     <NavItem eventKey={1} title="Order">Order For</NavItem>
+    //     <NavItem eventKey={2} title="Date">Date & Time</NavItem>
+    //     <NavItem eventKey={3} title="Address">Enter Your Address</NavItem>
+    //   </Nav>
+    <div className="App">
+       <button onClick={this.toggleModal}>
+         Open the modal
+       </button>
 
-    
-  //   <div className="container">
-  //
-  //   <nav className="navbar navbar-default navbar-inverse bg-inverse navbar-static-top">
-  //     <div className="container-fluid">
-  //       <div className="navbar-header">
-  //         <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-  //           <span className="sr-only">Toggle navigation</span>
-  //           <span className="icon-bar"></span>
-  //           <span className="icon-bar"></span>
-  //           <span className="icon-bar"></span>
-  //         </button>
-  //         {/* <a className="navbar-brand" href="#">Project name</a> */}
-  //       </div>
-  //       <div id="navbar" className="navbar-collapse collapse">
-  //         <ul className="nav navbar-nav">
-  //           <li className="active"><NavLink to="/" href="#">🍎</NavLink></li>
-  //           <li><NavLink to="/" href="#">Mac</NavLink></li>
-  //           <li><NavLink to="/" href="#">iPhone</NavLink></li>
-  //           <li><NavLink to="/" href="#">iPod</NavLink></li>
-  //         </ul>
-  //         <ul className="nav navbar-nav navbar-right">
-  //           <li><NavLink to="/" href="#">Support</NavLink></li>
-  //           <li><NavLink to="/" href="#">Search</NavLink></li>
-  //           <li><NavLink to="/cart" href="#">Cart</NavLink></li>
-  //           {/* <li><a href="../navbar/">Default</a></li> */}
-  //           {/* <li className="active"><a href="./">Static top <span className="sr-only">(current)</span></a></li> */}
-  //           {/* <li><a href="../navbar-fixed-top/">Fixed top</a></li> */}
-  //         </ul>
-  //       </div>
-  //     </div>
-  //   </nav>
-  // </div>
+       <Modal show={this.state.isOpen}
+         onClose={this.toggleModal}>
+         Here's some content for the modal
+       </Modal>
+     </div>
+    // </div>
     )
   }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
 import items from '../../data/items';
 import './style.css';
+import { Grid, Row, Col, Image } from 'react-bootstrap';
 
 class ItemsShow extends Component {
 
@@ -15,17 +16,30 @@ class ItemsShow extends Component {
     console.log(item.image);
     return (
       <div>
-        <h3>
-          name: {item.name}
-          price: {item.price}
-          description: {item.description}
-        </h3>
-          <img className="item-pic" src={`./img/${item.image}`}/>
-          <img className="item-pic" src={`img/${this.props.image}`}/>
-          {/* <img src={require(`img/${item.image}`)} /> */}
-        <div className="navigateBack">
-          <Link to="/">« Back to the index</Link>
-        </div>
+        {/* <img className="item-pic" src={`/img/${item.image}`}/> */}
+        <Grid>
+          <Row className="show-grid">
+            <Col xs={12} sm={6} md={6}>
+              <div className="pic-hold">
+                <img className="food-pic" src={`/img/${item.image}`}/>
+              </div>
+            </Col>
+            <Col xs={12} sm={6} md={6}>
+              <div className="navigateBack">
+                <Link to="/">« All Items</Link>
+              </div>
+              <h3>
+                {item.name} <br/>
+              </h3>
+              <h2>
+                ${item.price} <br /><br />
+              </h2>
+              <p>
+                {item.description}
+              </p>
+            </Col>
+          </Row>
+        </Grid>
       </div>
     )
   }
