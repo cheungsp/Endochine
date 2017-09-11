@@ -16,8 +16,30 @@
     color: $black;
 }
 
+.logo-pic {
+    width: 100px;
+    height: 100px;
+}
+
 .header {
   margin-bottom: 50px;
+}
+
+.navbar-tab {
+  /*width: 500px;*/
+}
+
+.cart-tab {
+  display: block;
+}
+
+.home-link {
+  text-align: center;
+  text-decoration:none;
+}
+
+.home-link:hover {
+  text-decoration:none;
 }
 
 .buttons-group {

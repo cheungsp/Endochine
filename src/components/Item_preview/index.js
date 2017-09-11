@@ -14,7 +14,7 @@ export default class ItemPreview extends Component {
             <img className="item-pic" src={`img/${this.props.image}`} />
             <h2 className="name">{this.props.name}</h2>
           </Link>
-          <h2 className="price">${this.props.price}</h2>
+          {/* <h2 className="price">${this.props.price.toFixed(2)}</h2> */}
         </div>
     );
   }

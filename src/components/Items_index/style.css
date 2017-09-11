@@ -20,7 +20,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding-left: 25px;
-  padding-right: 25px;*/
+  /*padding-left: 25px;*/
+  /*padding-right: 25px;*/
   flex-direction: row;
 }

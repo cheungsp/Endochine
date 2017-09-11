@@ -54,6 +54,13 @@ const items = [
     'price': 12.00,
     'image': 'oyster.jpg',
     'description': 'Baked oysters and white mushrooms in a spicy tomato garlic aioli with mozzarella cheese.'
+  },
+  {
+    'id': 9,
+    'name': 'Vietnamese-Style Spring Rolls',
+    'price': 8.00,
+    'image': 'springrolls.jpg',
+    'description': 'Ground pork, vegetables, and herbs stuffed inside a crispy, flakey shell'
   }
 ];
 

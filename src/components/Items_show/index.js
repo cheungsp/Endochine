@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
 import items from '../../data/items';
 import './style.css';
-import { Grid, Row, Col, Image } from 'react-bootstrap';
+import { Grid, Row, Col, Image, Button } from 'react-bootstrap';
 
 class ItemsShow extends Component {
 
@@ -32,11 +32,15 @@ class ItemsShow extends Component {
                 {item.name} <br/>
               </h3>
               <h2>
-                ${item.price} <br /><br />
+                ${item.price.toFixed(2)} <br /><br />
               </h2>
               <p>
                 {item.description}
               </p>
+              <br />
+              <div className="text-center">
+                <Button className="addToCartButton" bsStyle="default" bsSize="large">Add To Cart</Button>
+              </div>
             </Col>
           </Row>
         </Grid>

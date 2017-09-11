@@ -6,3 +6,8 @@
 .pic-hold{
   /*background: #eee;*/
 }
+
+.addToCartButton {
+    border-radius: 22.5px;
+    margin-bottom: 8px;
+}

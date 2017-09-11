@@ -1,11 +1,13 @@
 .item-pic {
   width: 375px;
+  /*width: 200px;*/
   /*width: 50%;*/
   height: 250px;
 }
 .item-preview {
   text-align: center;
-  width: 49%;
+  /*width: 49%;*/
+  padding-bottom: 35px;
 }
 
 .name {

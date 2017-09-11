@@ -73,10 +73,13 @@ class Header extends Component {
   let deliveryColour = this.state.is_delivery ? "#ff4d4d" : "white"
   return (
     <div className="header">
+      <Link to={'/'} className="home-link">
+        <h1>ENDOCHINE</h1>
+      </Link>
       <Nav bsStyle="tabs" justified>
-        <NavItem eventKey={1} title="Order" onClick={this.openDate} >Order For</NavItem>
-        <NavItem eventKey={2} title="Date">Date & Time</NavItem>
-        <NavItem eventKey={3} title="Address" onClick={this.openAddress}>Enter Your Address</NavItem>
+        <NavItem eventKey={1} title="Order" className='navbar-tab' onClick={this.openDate} >Order For</NavItem>
+        <NavItem eventKey={2} title="Address" className='navbar-tab' onClick={this.openAddress}>Enter Your Address</NavItem>
+        <NavItem eventKey={3} title="Cart" ><Link to={`/cart`} className='cart-tab'>Cart</Link></NavItem>
       </Nav>
 
       <div>
@@ -85,6 +88,9 @@ class Header extends Component {
            <Modal.Title className="text-center">When to order?</Modal.Title>
          </Modal.Header>
          <Modal.Body>
+           {/* <div>
+           <img className="logo-pic" src={`/img/logo.jpg`}/>
+         </div> */}
            <div className="buttons-group">
            <Button
              className="delivery-button"
