@@ -12,8 +12,18 @@ class Header extends Component {
 
     this.state = {
       showDateModal: false,
-      showAddressModal: false
+      showAddressModal: false,
+      is_pickup: true,
+      is_delivery: false,
+      date: 'Today',
+      time: 'ASAP'
     };
+
+    this.changePickupColour = this.changePickupColour.bind(this);
+    this.changeDeliveryColour = this.changeDeliveryColour.bind(this);
+    // this.onTargetSelect = this.onTargetSelect.bind(this);
+    this.changeValueDate = this.changeValueDate.bind(this);
+    this.changeValueTime = this.changeValueTime.bind(this);
   }
 
   closeDate = () => {
@@ -32,7 +42,35 @@ class Header extends Component {
     this.setState({ showAddressModal: true });
   }
 
+  changePickupColour(){
+      if ((this.state.is_pickup === false) && (this.state.is_delivery === true)) {
+        this.setState({is_pickup: true})
+        this.setState({is_delivery: false})
+      }
+      // console.log(this.state.is_pickup);
+  }
+
+  changeDeliveryColour(){
+    if ((this.state.is_pickup === true) && (this.state.is_delivery === false)) {
+      this.setState({is_pickup: false})
+      this.setState({is_delivery: true})
+    }
+  }
+
+  // function to change drop down menu title
+  changeValueDate(e) {
+    this.setState({date: e.currentTarget.textContent})
+  }
+
+  changeValueTime(e) {
+    this.setState({time: e.currentTarget.textContent})
+  }
+
+
   render() {
+    // back ground colour for buttons
+  let pickupColour = this.state.is_pickup ? "#ff4d4d" : "white"
+  let deliveryColour = this.state.is_delivery ? "#ff4d4d" : "white"
   return (
     <div className="header">
       <Nav bsStyle="tabs" justified>
@@ -51,33 +89,68 @@ class Header extends Component {
            <Button
              className="delivery-button"
              bsStyle="default"
-             bsSize="large">
+             bsSize="large"
+             style={{backgroundColor: deliveryColour}}
+             onClick={this.changeDeliveryColour}>
              DELIVERY
            </Button>
            <Button
              className="pickup-button"
-             bsStyle="danger"
-             bsSize="large">
+            //  bsStyle="danger"
+             bsStyle="default"
+             bsSize="large"
+             style={{backgroundColor: pickupColour}}
+             onClick={this.changePickupColour}>
              PICKUP
            </Button>
          </div>
          <div className="pickup-dropdown">
-           <DropdownButton className="date-dropdown" title="Order For Today" bsSize="large">
-             <MenuItem eventKey="1">Today</MenuItem>
-             <MenuItem eventKey="2">Tuesday, Sept 12th</MenuItem>
-             <MenuItem eventKey="3">Wednesday, Sept 13th</MenuItem>
-             <MenuItem eventKey="4">Thursday, Sept 14th</MenuItem>
-             <MenuItem eventKey="5">Friday, Sept 15th</MenuItem>
-             <MenuItem eventKey="6">Saturday, Sept 16th</MenuItem>
-             <MenuItem eventKey="7">Sunday, Sept 17th</MenuItem>
+           <DropdownButton
+             className="date-dropdown"
+             title={this.state.date}
+             bsSize="large" >
+             <MenuItem eventKey="1">
+              <div onClick={this.changeValueDate}>Today</div>
+            </MenuItem>
+            <MenuItem eventKey="2">
+               <div onClick={this.changeValueDate}>Tuesday, Sept 12th</div>
+            </MenuItem>
+             <MenuItem eventKey="3">
+               <div onClick={this.changeValueDate}>Wednesday, Sept 13th</div>
+             </MenuItem>
+             <MenuItem eventKey="4">
+               <div onClick={this.changeValueDate}>Thursday, Sept 14th</div>
+             </MenuItem>
+             <MenuItem eventKey="5">
+               <div onClick={this.changeValueDate}>Friday, Sept 15th</div>
+             </MenuItem>
+             <MenuItem eventKey="6">
+               <div onClick={this.changeValueDate}>Saturday, Sept 16th</div>
+             </MenuItem>
+             <MenuItem eventKey="7">
+               <div onClick={this.changeValueDate}>Sunday, Sept 17th</div>
+             </MenuItem>
            </DropdownButton>
 
-           <DropdownButton className="time-dropdown" title="ASAP" bsSize="large">
-             <MenuItem eventKey="1">ASAP</MenuItem>
-             <MenuItem eventKey="2">3:00pm</MenuItem>
-             <MenuItem eventKey="3">3:30pm</MenuItem>
-             <MenuItem eventKey="4">4:00pm</MenuItem>
-             <MenuItem eventKey="5">4:30pm</MenuItem>
+           <DropdownButton
+             className="time-dropdown"
+             title={this.state.time}
+             bsSize="large">
+             <MenuItem eventKey="1">
+               <div onClick={this.changeValueTime}>ASAP</div>
+            </MenuItem>
+             <MenuItem eventKey="2">
+               <div onClick={this.changeValueTime}>3:00pm</div>
+             </MenuItem>
+             <MenuItem eventKey="3">
+               <div onClick={this.changeValueTime}>3:30pm</div>
+             </MenuItem>
+             <MenuItem eventKey="4">
+               <div onClick={this.changeValueTime}>4:00pm</div>
+             </MenuItem>
+             <MenuItem eventKey="5">
+               <div onClick={this.changeValueTime}>4:30pm</div>
+             </MenuItem>
            </DropdownButton>
 
          </div>
