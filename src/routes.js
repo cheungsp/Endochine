@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './style/style.css';
 
-import reducers from './reducers';
+// import reducers from './reducers';
 import Cart from './components/Cart/index';
 import ItemsShow from './components/Items_show/index';
 import ItemsIndex from './components/Items_index/index';

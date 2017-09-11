@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './style.css';
 import { Nav, NavItem, Modal, Button, MenuItem, DropdownButton } from 'react-bootstrap';
-
-// import Modal from '../Modal/index';
+// import AddressModal from '../Address_modal/index';
+import AddressForm from '../Address_form/index';
 
 
 class Header extends Component {
@@ -24,6 +24,7 @@ class Header extends Component {
     // this.onTargetSelect = this.onTargetSelect.bind(this);
     this.changeValueDate = this.changeValueDate.bind(this);
     this.changeValueTime = this.changeValueTime.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   closeDate = () => {
@@ -66,6 +67,22 @@ class Header extends Component {
     this.setState({time: e.currentTarget.textContent})
   }
 
+  handleSubmit(event) {
+    let deliveryMethod = this.state.is_delivery ? "delivery" : "pickup"
+    alert('Order submitted for ' + deliveryMethod + " for " + this.state.date + " at " + this.state.time);
+    event.preventDefault();
+  }
+
+  // field group function
+//   FieldGroup({ id, label, help, ...props }) {
+//   return (
+//     <FormGroup controlId={id}>
+//       <ControlLabel>{label}</ControlLabel>
+//       <FormControl {...props} />
+//       {help && <HelpBlock>{help}</HelpBlock>}
+//     </FormGroup>
+//   );
+// }
 
   render() {
     // back ground colour for buttons
@@ -163,28 +180,32 @@ class Header extends Component {
          </Modal.Body>
          <Modal.Footer>
            <div className="footer-buttons">
-           <Button className="update-button" bsStyle="default" bsSize="large">Update Results</Button>
+           <Button
+             className="update-button"
+             bsStyle="default"
+             bsSize="large"
+             onClick={this.handleSubmit}>
+             Update Results
+           </Button>
            <br />
-           <Button bsSize="small" onClick={this.closeDate}>Close</Button>
+           {/* <Button bsSize="small" onClick={this.closeDate}>Close</Button> */}
          </div>
          </Modal.Footer>
        </Modal>
      </div>
 
+     {/* Addres Modal */}
      <div>
       <Modal show={this.state.showAddressModal} onHide={this.closeAddress}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Your Address:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>ADDRESSSSSS</h4>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-          <h4>Popover in a modal</h4>
-          <hr />
+          <AddressForm />
         </Modal.Body>
-        <Modal.Footer>
+        {/* <Modal.Footer>
           <Button onClick={this.closeAddress}>Close</Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </div>
 

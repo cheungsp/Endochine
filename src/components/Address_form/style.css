@@ -1,0 +1,32 @@
+.address_label {
+      background-color: #fffdfa;
+      border: 1px solid #cccccc;
+      list-style-type: none;
+      padding-top: 5px;
+      padding-left: 5px;
+      border-radius: 8px;
+      margin: 0 auto;
+      width: 80%;
+      display: block;
+      /*text-align: center;*/
+      font-size: 20px;
+}
+
+.address_input {
+      background-color: transparent;
+      border: none;
+      font-size: 18px;
+      margin: 0;
+      padding: 2em 10px 10px 10px;
+      outline: none;
+      width: 100%;
+      color: #CF2830 !important;
+      font-weight: bold;
+}
+
+.address_button {
+  border-radius: 22.5px;
+  background-color: #3a384d;
+  color: white;
+  margin-bottom: 15px;
+}
