@@ -18,6 +18,7 @@ class AddressForm extends Component {
   handleSubmit(event) {
     alert('Address submitted: ' + this.state.value);
     event.preventDefault();
+    this.closeAddress;
   }
 
   render() {

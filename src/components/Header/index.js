@@ -21,10 +21,10 @@ class Header extends Component {
 
     this.changePickupColour = this.changePickupColour.bind(this);
     this.changeDeliveryColour = this.changeDeliveryColour.bind(this);
-    // this.onTargetSelect = this.onTargetSelect.bind(this);
     this.changeValueDate = this.changeValueDate.bind(this);
     this.changeValueTime = this.changeValueTime.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.closeAddress = this.closeAddress.bind(this);
   }
 
   closeDate = () => {
@@ -38,6 +38,8 @@ class Header extends Component {
   closeAddress = () => {
     this.setState({ showAddressModal: false });
   }
+
+
 
   openAddress = () => {
     this.setState({ showAddressModal: true });
@@ -69,20 +71,10 @@ class Header extends Component {
 
   handleSubmit(event) {
     let deliveryMethod = this.state.is_delivery ? "delivery" : "pickup"
+    this.closeDate();
     alert('Order submitted for ' + deliveryMethod + " for " + this.state.date + " at " + this.state.time);
     event.preventDefault();
   }
-
-  // field group function
-//   FieldGroup({ id, label, help, ...props }) {
-//   return (
-//     <FormGroup controlId={id}>
-//       <ControlLabel>{label}</ControlLabel>
-//       <FormControl {...props} />
-//       {help && <HelpBlock>{help}</HelpBlock>}
-//     </FormGroup>
-//   );
-// }
 
   render() {
     // back ground colour for buttons
@@ -91,7 +83,7 @@ class Header extends Component {
   return (
     <div className="header">
       <Link to={'/'} className="home-link">
-        <h1>ENDOCHINE</h1>
+        <h1 className="title">ENDOCHINE</h1>
       </Link>
       <Nav bsStyle="tabs" justified>
         <NavItem eventKey={1} title="Order" className='navbar-tab' onClick={this.openDate} >Order For</NavItem>
@@ -201,7 +193,7 @@ class Header extends Component {
           <Modal.Title>Your Address:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <AddressForm />
+          <AddressForm closeAddress={this.closeAddress}/>
         </Modal.Body>
         {/* <Modal.Footer>
           <Button onClick={this.closeAddress}>Close</Button>

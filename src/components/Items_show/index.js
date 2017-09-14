@@ -8,15 +8,9 @@ class ItemsShow extends Component {
 
   render() {
     const id = Number(this.props.match.params.id);
-    // const name = this.props.match.params.name;
     const item = items.filter((item) => item.id === id)[0];
-    // let obj = items.find(o => o.id === id);
-    // let obj = items;
-    // console.log(obj);
-    console.log(item.image);
     return (
       <div>
-        {/* <img className="item-pic" src={`/img/${item.image}`}/> */}
         <Grid>
           <Row className="show-grid">
             <Col xs={12} sm={6} md={6}>
