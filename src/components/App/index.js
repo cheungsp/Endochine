@@ -10,12 +10,6 @@ import Image from '../Image/index';
 import './style.css';
 import Wallpaper from '../../image/wallpaper.jpg';
 
-let sectionStyle = {
-  // width: "100%",
-  // height: "100%",
-  // backgroundImage: `url(${Wallpaper})`,
-  // opacity: 0.2
-};
 
 
 class App extends Component {
@@ -30,7 +24,6 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper">
-      {/* <div className="wrapper" style={ sectionStyle }> */}
         <Router>
           <div>
             <Header />
@@ -45,11 +38,5 @@ class App extends Component {
     );
   }
 }
-
-// App.propTypes = {
-//   children: PropTypes.element,
-//   location: PropTypes.object,
-//   "location.pathname": PropTypes.string
-// };
 
 export default App;
