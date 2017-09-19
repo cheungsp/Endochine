@@ -52,6 +52,19 @@ class App extends Component {
 
  componentWillMount() {
    this.props.fetchItems();
+   this.forceUpdate()
+ }
+
+ componentDidMount() {
+  //  let elements = document.getElementsByClassName('pricetag');
+  //  let allElements = Array.prototype.slice.call(elements);
+  //  let sum_array = allElements.map(function(x) {
+  //    return parseInt(x.innerHTML);
+  //  });
+  //  let total_sum = sum_array.reduce(function(sum, value) {
+  //    return sum + value;
+  //   }, 0);
+  //   console.log(total_sum);
  }
 
  handleInputChange(event) {
@@ -60,7 +73,6 @@ class App extends Component {
 
  handleFormSubmit(event) {
    event.preventDefault();
-
    this.props.createItem(this.state.item, Math.floor(Math.random() * 20))
  }
 
@@ -70,7 +82,17 @@ class App extends Component {
    });
  }
 
+
  render() {
+   let elements = document.getElementsByClassName('pricetag');
+   let allElements = Array.prototype.slice.call(elements);
+   let sum_array = allElements.map(function(x) {
+     return parseFloat(x.innerHTML);
+   });
+   let total_sum = sum_array.reduce(function(sum, value) {
+     return sum + value;
+    }, 0);
+
    return (
      <div>
        <h4>Items in your cart</h4>
@@ -87,6 +109,7 @@ class App extends Component {
        <ul className="list-group">
          {this.renderItems()}
        </ul>
+       <span>Total is: {total_sum}</span>
      </div>
    );
  }
