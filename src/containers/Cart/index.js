@@ -1,51 +1,10 @@
-// import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
-//
-// import './style.css';
-//
-// class Cart extends Component {
-//
-//   renderList() {
-//     return this.props.items.map((item) => {
-//       return (
-//         <li key={item.title} className="list-group-item">{item.title}</li>
-//       )
-//     })
-//   }
-//
-//   render() {
-//     return (
-//       <div className="text-center">
-//         Cart is coming soon.
-//         <br />
-//         <Link to="/">« Go Back to All Items</Link>
-//         <ul className="list-group col-sm-4">
-//           {this.renderList()}
-//         </ul>
-//       </div>
-//     )
-//   }
-// }
-//
-// function mapStateToProps(state) {
-//   // Whatever is returned will show up as props inside of Booklist
-//
-//   return {
-//     items: state.items
-//   };
-// }
-//
-// // produces the container
-// export default connect(mapStateToProps)(Cart);
-
-
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import Item from '../../components/Item/index';
+import { Grid, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
  state = { item: '' };
@@ -94,22 +53,18 @@ class App extends Component {
     }, 0);
 
    return (
-     <div>
-       <h4>Items in your cart</h4>
-       {/* <form onSubmit={this.handleFormSubmit.bind(this)} className="form-inline">
-         <div className="form-group">
-           <input
-             className="form-control"
-             placeholder="Add Item"
-             value={this.state.item}
-             onChange={this.handleInputChange.bind(this)} />
-           <button action="submit" className="btn btn-primary">Add</button>
-         </div>
-       </form> */}
-       <ul className="list-group">
-         {this.renderItems()}
-       </ul>
-       <span>Total is: {total_sum}</span>
+     <div className="text-center">
+       <Grid>
+         <Row className="show-grid">
+           <Col xs={12} sm={12} md={12}>
+             <ul className="list-group">
+               {this.renderItems()}
+             </ul>
+             <span><h2>Total: ${total_sum}</h2></span>
+             <Link to="/">« Go Back to All Items</Link>
+           </Col>
+         </Row>
+       </Grid>
      </div>
    );
  }

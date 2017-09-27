@@ -1,0 +1,12 @@
+.remove-link:hover {
+  text-decoration: underline;
+  color: #ff1a1a
+}
+
+.remove-link {
+  color: #ff1a1a;
+}
+
+.list-group-item {
+  border: 0 none;
+}

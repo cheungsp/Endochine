@@ -14,13 +14,13 @@ class Item extends Component {
     const item = items.filter((item) => item.name === name)[0];
     return (
       <li className="list-group-item">
-        {/* {this.props.item} */}
         <span>{item.name}</span> - $<span className="pricetag">{item.price.toFixed(2)}</span>
-        <button
+        <br/>
+        <span
           onClick={this.handleClick.bind(this)}
-          className="btn btn-danger right">
-          Delete
-        </button>
+          // className="remove-link"
+          className={['remove-link', 'text-right'].join(' ')}
+          >Remove</span>
       </li>
     );
   }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import items from '../../data/items';
 import './style.css';
-import { Grid, Row, Col, Image, Button } from 'react-bootstrap';
+import { Grid, Row, Col, Image } from 'react-bootstrap';
 
 import _ from 'lodash';
 import { connect } from 'react-redux';
@@ -15,12 +15,6 @@ class ItemsShow extends Component {
   componentWillMount() {
     this.props.fetchItems();
   }
-  //
-  // handleInputChange(event) {
-  //   // this.setState({ item: event.target.value });
-  //   this.setState({ item: event.target.value });
-  // }
-
   handleFormSubmit(event) {
     const id = Number(this.props.match.params.id);
     const item = items.filter((item) => item.id === id)[0];
@@ -28,9 +22,6 @@ class ItemsShow extends Component {
 
     this.props.createItem(item.name, Math.floor(Math.random() * 20));
     alert('Added to cart item ' + ` ${item.name}`);
-    // console.log('Added to cart item ' + ` ${item.name}`);
-
-    // console.log(`${item}`);
   }
 
   renderItems() {
@@ -68,7 +59,6 @@ class ItemsShow extends Component {
               <br />
               <div className="text-center">
                 {/* <Button className="addToCartButton" bsStyle="default" bsSize="large">Add To Cart</Button> */}
-
                 <form onSubmit={this.handleFormSubmit.bind(this)} className="form-inline">
                   <div className="form-group">
                     {/* <input

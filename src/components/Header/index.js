@@ -195,9 +195,6 @@ class Header extends Component {
         <Modal.Body>
           <AddressForm closeAddress={this.closeAddress}/>
         </Modal.Body>
-        {/* <Modal.Footer>
-          <Button onClick={this.closeAddress}>Close</Button>
-        </Modal.Footer> */}
       </Modal>
     </div>
 
